@@ -1,6 +1,6 @@
 # Wick's Stances and Things - Changelog
 
-## Unreleased
+## 0.9.3 (2026-11-15)
 
 - Shows in the game's addon list with an icon and the two-tone Wick title, under a Wick's Mods heading.
 
