@@ -1,5 +1,9 @@
 # Wick's Stances and Things - Changelog
 
+## Unreleased
+
+- Shows in the game's addon list with an icon and the two-tone Wick title, under a Wick's Mods heading.
+
 ## 0.9.2 (2026-11-05)
 
 - Each key on the strip shows its keybinding in the corner, shortened
@@ -15,7 +19,7 @@
   find who is casting for you, so point at them (the nameplate castbars
   show who) and press.
 
-## 0.9.1 - 2026-10-03
+## 0.9.1 (2026-10-03)
 
 - Weapon swap keys, the same two as the paladin kit: one puts your
   two-hander in your hands, the other your one-hander and shield. They
@@ -33,7 +37,7 @@ One version across the suite for the Forever beta. Every addon carried a
 number of its own that said nothing about how finished it was, so they are
 aligned here and the suite goes to 1.0.0 together at launch.
 
-## 0.1.0 - 2026-09-22
+## 0.1.0 (2026-09-22)
 
 First build. The warrior kit for World of Warcraft: Forever.
 
