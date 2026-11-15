@@ -179,8 +179,32 @@ function A:OnEnable()
         y = O:Note(page, "Three stances and one smart key. The stance you are in is lit; click another to swap. Shift-drag moves the strip even when locked.", y)
 
         y = O:Heading(page, "The smart key", y - 6)
-        y = O:Note(page, ("Set to %s. Change it with /wst bind <ability>. The key puts you in the stance that ability needs and then uses it, so from the wrong stance it takes two presses: the game will not change stance and swing off one. From the right stance it is a single press.")
-            :format(db.smartAbility or "Charge"), y)
+        if O.Choice then
+            y = O:Choice(page, "Ability on the key",
+                function()
+                    -- A name typed by hand in another case is still the one in the list.
+                    local cur = db.smartAbility or "Charge"
+                    for _, e in ipairs(ns.Stances:Routable()) do
+                        if e.name:lower() == cur:lower() then return e.name end
+                    end
+                    return cur
+                end,
+                function(v) db.smartAbility = v; ns.UI:UpdateMacros() end, y, {
+                    options = function()
+                        local out = {}
+                        for _, e in ipairs(ns.Stances:Routable()) do
+                            local stance = (ns.Stances:NameOf(e.stance):gsub(" Stance", ""))
+                            out[#out + 1] = { value = e.name, text = ("%s (%s)"):format(e.name, stance) }
+                        end
+                        return out
+                    end,
+                    other = function(v) return tostring(v) end,
+                })
+            y = O:Note(page, "The key puts you in the stance that ability needs and then uses it, so from the wrong stance it takes two presses: the game will not change stance and swing off one. From the right stance it is a single press. The list is every ability that needs a stance; anything else can still go on the key by name with /wst bind.", y)
+        else
+            y = O:Note(page, ("Set to %s. Change it with /wst bind <ability>. The key puts you in the stance that ability needs and then uses it, so from the wrong stance it takes two presses: the game will not change stance and swing off one. From the right stance it is a single press.")
+                :format(db.smartAbility or "Charge"), y)
+        end
         y = O:Heading(page, "The kick key", y - 6)
         y = O:Note(page, "Pummel in Berserker, Shield Bash in Battle or Defensive with a shield on. With no shield on in Battle or Defensive, the first press takes you to Berserker and the second Pummels. It hits the enemy under your mouse, else your focus, else your target, else the one you are facing, and never changes your target or focus. One press is one interrupt on one enemy. Bind it under Key Bindings, AddOns.", y)
         y = O:Button(page, "Open strip", function() ns.UI:Toggle() end, y, 100)

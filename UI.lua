@@ -248,7 +248,7 @@ function UI:BuildStrip()
         elseif ability ~= "" then
             GameTooltip:AddLine("Needs no stance: cast where you stand.", 0.5, 0.5, 0.5)
         end
-        GameTooltip:AddLine("/wst bind <ability> to change it.", 0.5, 0.5, 0.5)
+        GameTooltip:AddLine("Change the ability under Options, Wick's Mods.", 0.5, 0.5, 0.5)
         GameTooltip:Show()
     end)
     smart:SetScript("OnLeave", function() GameTooltip:Hide() end)
@@ -384,7 +384,7 @@ function UI:Refresh()
         f.smartNote:SetText("any stance")
         tint(f.smartNote, C.muted)
     else
-        f.smartNote:SetText("/wst bind <ability>")
+        f.smartNote:SetText("pick one in Options")
         tint(f.smartNote, C.muted)
     end
     self:RefreshSwap()
