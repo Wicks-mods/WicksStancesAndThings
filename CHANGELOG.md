@@ -1,6 +1,6 @@
 # Wick's Stances and Things - Changelog
 
-## Unreleased
+## 0.9.4 (2026-11-15)
 
 - The smart key's ability is picked on the options page, from every ability that needs a stance. It used to need a typed command, and an ability outside the list can still be set by name.
 

@@ -2,7 +2,7 @@
 ## Title: |cffD4C8A1Wick's|r |cff4FC778Stances and Things|r
 ## Notes: Warrior loadout kit for World of Warcraft: Forever. Stance strip with a smart key, talents, pre-pull checklist, racials.
 ## Author: Wick
-## Version: 0.9.3
+## Version: 0.9.4
 ## OptionalDeps: WickCore
 ## SavedVariables: WicksStancesSaved
 ## IconTexture: Interface\Icons\Ability_Warrior_DefensiveStance
